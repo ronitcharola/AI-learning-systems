@@ -31,6 +31,11 @@ def create_app(config_class=Config):
             "service": "AI Productivity OS Backend",
             "version": "1.0.0"
         }), 200
+
+    @app.route('/', methods=['GET'])
+    def home():
+        """Root endpoint for deployment verification."""
+        return "AI Productivity OS API is running!", 200
         
     return app
 
