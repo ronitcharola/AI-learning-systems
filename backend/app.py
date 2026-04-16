@@ -8,7 +8,7 @@ def create_app(config_class=Config):
     app.config.from_object(config_class)
     
     # Enable CORS for frontend integration
-    CORS(app)
+    CORS(app, resources={r"/api/*": {"origins": ["https://ai-learning-systems.vercel.app", "http://localhost:5000", "http://127.0.0.1:5000"]}})
     
     # Future Blueprint registrations
     from routes.auth_routes import auth_bp
